@@ -1,0 +1,42 @@
+{
+  "IndexDocument": {
+    "Suffix": "index.html"
+  },
+  "ErrorDocument": {
+    "Key": "404.html"
+  },
+  "RoutingRules": [
+    {
+      "Condition": {
+        "KeyPrefixEquals": "de/kontakt"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "de/kontakt/index.html"
+      }
+    },
+    {
+      "Condition": {
+        "KeyPrefixEquals": "de/ueber-uns"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "de/ueber-uns/index.html"
+      }
+    },
+    {
+      "Condition": {
+        "KeyPrefixEquals": "en/contact"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "en/contact/index.html"
+      }
+    },
+    {
+      "Condition": {
+        "KeyPrefixEquals": "en/about-us"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "en/about-us/index.html"
+      }
+    }
+  ]
+} 

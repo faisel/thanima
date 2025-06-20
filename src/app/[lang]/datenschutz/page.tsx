@@ -33,7 +33,7 @@ export default async function DatenschutzPage({ params: { lang } }: { params: { 
         <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, wie wir Ihre personenbezogenen Daten erheben, verarbeiten und nutzen.</p>
         
         <h2>2. Verantwortliche Stelle</h2>
-        <p>Switzerathi GmbH, Musterstrasse 12, 8000 Zürich, Schweiz. Email: info@switzerathi.ch</p>
+        <p>Thanima GmbH, Musterstrasse 12, 8000 Zürich, Schweiz. Email: info@thanima.ch</p>
 
         <h2>3. Erhebung und Verarbeitung von personenbezogenen Daten</h2>
         <p>Wir erheben und verarbeiten personenbezogene Daten, die Sie uns freiwillig zur Verfügung stellen, z.B. bei der Kontaktaufnahme über unser Kontaktformular. Dies können Name, E-Mail-Adresse und Ihre Nachricht sein.</p>

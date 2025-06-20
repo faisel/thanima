@@ -1,6 +1,11 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 @layer base {
   :root {
@@ -31,8 +36,8 @@
     --chart-5: 27 87% 67%;
 
     /* Custom variables */
-    --header-background-custom: 152 35% 24%; /* Dark Green #28533f */
-    --header-foreground-custom: 0 0% 100%; /* White */
+    --header-background-custom: 0 0% 100%; /* White */
+    --header-foreground-custom: 0 0% 13%; /* #222222 */
     --text-headline: 0 0% 0%; /* Black for headlines */
     --box-shadow-subtle: 0 4px 12px rgba(0,0,0,0.04);
   }
@@ -58,28 +63,35 @@
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 77 38% 39%;
-    --header-background-custom: 152 35% 18%;
-    --header-foreground-custom: 0 0% 98%;
+    --header-background-custom: 0 0% 100%; /* White */
+    --header-foreground-custom: 0 0% 13%; /* #222222 */
     --text-headline: 0 0% 100%;
   }
 }
 
 @layer base {
   * {
+    /* stylelint-disable-next-line at-rule-no-unknown */
     @apply border-border;
   }
+  
   html {
+    /* stylelint-disable-next-line at-rule-no-unknown */
     @apply scroll-smooth;
   }
+  
   body {
+    /* stylelint-disable-next-line at-rule-no-unknown */
     @apply bg-background text-foreground;
     font-feature-settings: "liga" 1, "calt" 1; /* Common practice for Poppins */
   }
   
   @media (prefers-reduced-motion: reduce) {
     html {
+      /* stylelint-disable-next-line at-rule-no-unknown */
       @apply scroll-auto;
     }
+    
     *,
     *::before,
     *::after {
@@ -93,9 +105,11 @@
 
 /* Utility classes */
 .container-max-width {
+  /* stylelint-disable-next-line at-rule-no-unknown */
   @apply max-w-[1220px] mx-auto px-6;
 }
 
 .headline-text {
+  /* stylelint-disable-next-line at-rule-no-unknown */
   @apply text-[hsl(var(--text-headline))];
-}
+} 

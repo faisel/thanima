@@ -1,4 +1,4 @@
-# **App Name**: Switzerathi
+# **App Name**: Thanima
 
 ## Core Features:
 

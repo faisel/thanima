@@ -32,7 +32,7 @@ export function Footer({ locale, translations }: FooterProps) {
     <footer className="sticky bottom-0 z-[1000] mt-auto w-full bg-muted py-8 text-muted-foreground">
       <div className="container-max-width flex flex-col items-center justify-between gap-6 sm:flex-row">
         <div className="text-sm">
-          &copy; {currentYear} Switzerathi. All rights reserved.
+          &copy; {currentYear} Thanima. All rights reserved.
         </div>
         <nav className="flex gap-4 text-sm" aria-label="Footer legal links">
           <Link href={`/${locale}/impressum`} className="hover:text-primary transition-colors">

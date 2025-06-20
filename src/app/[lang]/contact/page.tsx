@@ -10,22 +10,26 @@ export async function generateStaticParams() {
   return [{ lang: 'en' }]; // Only for English path
 }
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-  unstable_setRequestLocale(params.lang);
-  const content = await getContent(params.lang);
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params;
+  unstable_setRequestLocale(lang);
+  const content = await getContent(lang);
   return {
     title: content.nav.contact,
-    description: `Contact Switzerathi: ${content.contact.address.line1}, ${content.contact.address.line2}`,
+    description: `Contact Thanima: ${content.contact.address.line1}, ${content.contact.address.line2}`,
      openGraph: {
       images: [{ url: content.contact.banner.image, alt: content.contact.banner.headline }],
     },
   };
 }
 
-export default async function ContactPage({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function ContactPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
   unstable_setRequestLocale(lang);
-  if (lang !== 'en') {
-    // Safeguard
+  if (lang === 'de') {
+    // This page should only be accessible via /en/contact
+    // German users should be redirected to /de/kontakt
+    return null;
   }
   const content = await getContent(lang);
   const { banner, address, form: formTranslations } = content.contact;

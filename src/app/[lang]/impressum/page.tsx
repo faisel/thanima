@@ -29,10 +29,10 @@ export default async function ImpressumPage({ params: { lang } }: { params: { la
         <p>
           {lang === 'de' ? 'Dies ist eine Platzhalterseite für das Impressum.' : 'This is a placeholder page for the Imprint.'}
         </p>
-        <p>Switzerathi GmbH</p>
+        <p>Thanima GmbH</p>
         <p>Musterstrasse 12</p>
         <p>8000 Zürich, Schweiz</p>
-        <p>Email: info@switzerathi.ch</p>
+        <p>Email: info@thanima.ch</p>
         <p>Telefon: +41 79 123 45 67</p>
         <p>Handelsregisternummer: CHE-123.456.789</p>
         <p>Mehrwertsteuernummer: CHE-123.456.789 MWST</p>

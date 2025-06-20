@@ -1,8 +1,7 @@
-
 {
   "de": {
     "site": {
-      "title": "Switzerathi - Südindische Mode",
+      "title": "Thanima - Südindische Mode",
       "description": "Entdecken Sie exklusive südindische Mode in der Schweiz. Saris, Lehengas und Seidenblusen."
     },
     "nav": {
@@ -15,7 +14,7 @@
     "home": {
       "banner": [
         {
-          "image": "https://placehold.co/1920x800.png",
+          "image": "/images/banner_1.jpg",
           "alt": "Elegante Saris Kollektion",
           "data_ai_hint": "sari fashion",
           "headline": "Zeitlose Eleganz",
@@ -24,7 +23,7 @@
           "link": "/de/kollektion/saris"
         },
         {
-          "image": "https://placehold.co/1920x800.png",
+          "image": "/images/banner_2.jpg",
           "alt": "Traditionelle Lehengas",
           "data_ai_hint": "lehenga traditional",
           "headline": "Tradition trifft Moderne",
@@ -34,26 +33,26 @@
         }
       ],
       "intro": {
-        "headline": "Willkommen bei Switzerathi",
+        "headline": "Willkommen bei Thanima",
         "text": "Ihre erste Adresse für authentische südindische Mode in der Schweiz. Wir bringen Ihnen die feinsten Stoffe und Designs direkt aus Indien."
       },
       "products": [
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_1.jpg",
           "alt": "Roter Seidensari",
           "data_ai_hint": "silk sari",
           "name": "Klassischer Seidensari",
           "caption": "Perfekt für Hochzeiten und festliche Anlässe."
         },
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_2.jpg",
           "alt": "Bestickte Lehenga",
           "data_ai_hint": "embroidered lehenga",
           "name": "Handbestickte Lehenga",
           "caption": "Ein Meisterwerk der Handwerkskunst."
         },
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_3.jpg",
           "alt": "Designer Seidenbluse",
           "data_ai_hint": "designer blouse",
           "name": "Moderne Seidenbluse",
@@ -63,22 +62,22 @@
     },
     "about": {
       "banner": {
-        "image": "https://placehold.co/1920x600.png",
-        "alt": "Über Switzerathi Team",
+        "image": "/images/banner_3.jpg",
+        "alt": "Über Thanima Team",
         "data_ai_hint": "team fashion",
         "headline": "Unsere Geschichte"
       },
       "partners": [
         {
-          "image": "https://placehold.co/300x400.png",
+          "image": "/images/img_4.jpg",
           "alt": "Gründerin Priya Sharma",
           "data_ai_hint": "woman portrait",
           "name": "Priya Sharma",
           "role": "Gründerin & CEO",
-          "bio": "Mit einer Leidenschaft für Mode und einem tiefen Respekt für südindische Traditionen gründete Priya Switzerathi, um kulturelle Schönheit in die Schweiz zu bringen."
+          "bio": "Mit einer Leidenschaft für Mode und einem tiefen Respekt für südindische Traditionen gründete Priya Thanima, um kulturelle Schönheit in die Schweiz zu bringen."
         },
         {
-          "image": "https://placehold.co/300x400.png",
+          "image": "/images/img_5.jpg",
           "alt": "Gründerin Anjali Müller",
           "data_ai_hint": "woman fashion",
           "name": "Anjali Müller",
@@ -88,13 +87,13 @@
       ],
       "mission": {
         "headline": "Unsere Mission",
-        "text": "Wir bei Switzerathi verpflichten uns, exquisite südindische Mode anzubieten, die Handwerkskunst, kulturelles Erbe und zeitgenössischen Stil feiert. Wir bemühen uns, unseren Kunden in der Schweiz authentische, hochwertige Kleidungsstücke zu bieten und gleichzeitig ethische Beschaffung und nachhaltige Praktiken zu fördern."
+        "text": "Wir bei Thanima verpflichten uns, exquisite südindische Mode anzubieten, die Handwerkskunst, kulturelles Erbe und zeitgenössischen Stil feiert. Wir bemühen uns, unseren Kunden in der Schweiz authentische, hochwertige Kleidungsstücke zu bieten und gleichzeitig ethische Beschaffung und nachhaltige Praktiken zu fördern."
       }
     },
     "contact": {
       "banner": {
-        "image": "https://placehold.co/1920x600.png",
-        "alt": "Kontaktieren Sie Switzerathi",
+        "image": "/images/banner_3.jpg",
+        "alt": "Kontaktieren Sie Thanima",
         "data_ai_hint": "contact support",
         "headline": "Nehmen Sie Kontakt auf"
       },
@@ -102,14 +101,14 @@
         "line1": "Musterstrasse 12",
         "line2": "8000 Zürich, Schweiz",
         "phone": "+41 79 123 45 67",
-        "email": "info@switzerathi.ch",
+        "email": "info@thanima.ch",
         "map": {
           "lat": 47.3769,
           "lng": 8.5417,
           "zoom": 14
         }
       },
-      "mapImageAlt": "Karte mit Standort von Switzerathi in Zürich",
+      "mapImageAlt": "Karte mit Standort von Thanima in Zürich",
       "form": {
         "name": "Name",
         "email": "E-Mail",
@@ -136,7 +135,7 @@
   },
   "en": {
     "site": {
-      "title": "Switzerathi - South-Indian Fashion",
+      "title": "Thanima - South-Indian Fashion",
       "description": "Discover exclusive South-Indian fashion in Switzerland. Sarees, Lehengas, and Silk Blouses."
     },
     "nav": {
@@ -149,7 +148,7 @@
     "home": {
       "banner": [
         {
-          "image": "https://placehold.co/1920x800.png",
+          "image": "/images/banner_1.jpg",
           "alt": "Elegant Sarees Collection",
           "data_ai_hint": "saree collection",
           "headline": "Timeless Elegance",
@@ -158,7 +157,7 @@
           "link": "/en/collection/sarees"
         },
         {
-          "image": "https://placehold.co/1920x800.png",
+          "image": "/images/banner_2.jpg",
           "alt": "Traditional Lehengas",
           "data_ai_hint": "lehenga design",
           "headline": "Tradition Meets Modernity",
@@ -168,26 +167,26 @@
         }
       ],
       "intro": {
-        "headline": "Welcome to Switzerathi",
+        "headline": "Welcome to Thanima",
         "text": "Your premier destination for authentic South-Indian fashion in Switzerland. We bring you the finest fabrics and designs directly from India."
       },
       "products": [
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_1.jpg",
           "alt": "Red Silk Saree",
           "data_ai_hint": "red saree",
           "name": "Classic Silk Saree",
           "caption": "Perfect for weddings and festive occasions."
         },
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_2.jpg",
           "alt": "Embroidered Lehenga",
           "data_ai_hint": "bridal lehenga",
           "name": "Hand-Embroidered Lehenga",
           "caption": "A masterpiece of craftsmanship."
         },
         {
-          "image": "https://placehold.co/400x533.png",
+          "image": "/images/img_3.jpg",
           "alt": "Designer Silk Blouse",
           "data_ai_hint": "silk blouse",
           "name": "Modern Silk Blouse",
@@ -198,21 +197,21 @@
     "about": {
       "banner": {
         "image": "https://placehold.co/1920x600.png",
-        "alt": "About Switzerathi Team",
+        "alt": "About Thanima Team",
         "data_ai_hint": "diverse team",
         "headline": "Our Story"
       },
       "partners": [
         {
-          "image": "https://placehold.co/300x400.png",
+          "image": "/images/img_4.jpg",
           "alt": "Founder Priya Sharma",
           "data_ai_hint": "professional woman",
           "name": "Priya Sharma",
           "role": "Founder & CEO",
-          "bio": "With a passion for fashion and a deep respect for South-Indian traditions, Priya founded Switzerathi to bring cultural beauty to Switzerland."
+          "bio": "With a passion for fashion and a deep respect for South-Indian traditions, Priya founded Thanima to bring cultural beauty to Switzerland."
         },
         {
-          "image": "https://placehold.co/300x400.png",
+          "image": "/images/img_5.jpg",
           "alt": "Founder Anjali Müller",
           "data_ai_hint": "creative director",
           "name": "Anjali Müller",
@@ -222,13 +221,13 @@
       ],
       "mission": {
         "headline": "Our Mission",
-        "text": "At Switzerathi, we are committed to providing exquisite South-Indian fashion that celebrates craftsmanship, cultural heritage, and contemporary style. We strive to bring authentic, high-quality garments to our customers in Switzerland while promoting ethical sourcing and sustainable practices."
+        "text": "At Thanima, we are committed to providing exquisite South-Indian fashion that celebrates craftsmanship, cultural heritage, and contemporary style. We strive to bring authentic, high-quality garments to our customers in Switzerland while promoting ethical sourcing and sustainable practices."
       }
     },
     "contact": {
       "banner": {
-        "image": "https://placehold.co/1920x600.png",
-        "alt": "Contact Switzerathi",
+        "image": "/images/banner_3.jpg",
+        "alt": "Contact Thanima",
         "data_ai_hint": "customer service",
         "headline": "Get In Touch"
       },
@@ -236,14 +235,14 @@
         "line1": "Sample Street 12",
         "line2": "8000 Zurich, Switzerland",
         "phone": "+41 79 123 45 67",
-        "email": "info@switzerathi.ch",
+        "email": "info@thanima.ch",
         "map": {
           "lat": 47.3769,
           "lng": 8.5417,
           "zoom": 14
         }
       },
-      "mapImageAlt": "Map showing Switzerathi location in Zurich",
+      "mapImageAlt": "Map showing Thanima location in Zurich",
       "form": {
         "name": "Name",
         "email": "Email",

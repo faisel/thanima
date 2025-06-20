@@ -64,11 +64,10 @@ export function HeroSlider({ slides, locale }: HeroSliderProps) {
                   alt={slide.alt || slide.headline}
                   layout="fill"
                   objectFit="cover"
-                  className="brightness-75" // Tailwind JIT needs full class name, not computed
+                  className="brightness-50" // Tailwind JIT needs full class name, not computed
                   priority={index === 0} // Preload first image
                   data-ai-hint={slide.data_ai_hint}
                 />
-                <div className="absolute inset-0 bg-secondary/60"></div> {/* Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center md:justify-start p-6 md:p-12 lg:p-24">
                   <div className="text-center md:text-left max-w-md lg:max-w-lg text-white animate-slide-up-fade">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-headline font-semibold mb-4 drop-shadow-md">

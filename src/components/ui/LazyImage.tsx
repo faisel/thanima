@@ -39,23 +39,23 @@ export function LazyImage({ src, alt, className, containerClassName, priority, .
   }
 
   return (
-    <div className={cn("relative overflow-hidden", containerClassName)}>
-      <Image
-        src={src}
-        alt={alt}
-        className={cn(
-          "transition-opacity duration-300 ease-in-out",
-          isLoading && !priority ? "opacity-0" : "opacity-100",
-          className
-        )}
-        onLoad={() => setIsLoading(false)}
-        onError={() => {
-          setIsLoading(false);
-          setIsError(true);
-        }}
-        priority={priority} // Pass priority to NextImage
-        {...props}
-      />
-    </div>
+    <Image
+      src={src}
+      alt={alt}
+      className={cn(
+        "transition-opacity duration-300 ease-in-out object-cover w-full h-full",
+        isLoading && !priority ? "opacity-0" : "opacity-100",
+        className
+      )}
+      onLoad={() => setIsLoading(false)}
+      onError={(e) => {
+        console.error("Image error", e.target);
+        setIsLoading(false);
+        setIsError(true);
+      }}
+      priority={priority} // Pass priority to NextImage
+      layout="fill"
+      {...props}
+    />
   );
 }

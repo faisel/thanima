@@ -11,13 +11,14 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-  if (!i18n.locales.includes(params.lang)) {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params;
+  if (!i18n.locales.includes(lang)) {
     // This should ideally not be reached if generateStaticParams is correct
     // and middleware handles unknown locales.
     return {}; 
   }
-  const content = await getContent(params.lang);
+  const content = await getContent(lang);
   return {
     title: {
       default: content.site.title,
@@ -27,12 +28,12 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     openGraph: {
       title: content.site.title,
       description: content.site.description,
-      locale: params.lang,
+      locale: lang,
       // Assuming first banner image for default OG image
       images: content.home.banner[0] ? [{ url: content.home.banner[0].image, alt: content.home.banner[0].alt || content.site.title }] : [],
     },
     alternates: {
-      canonical: `/${params.lang}`,
+      canonical: `/${lang}`,
       languages: {
         'de-CH': '/de',
         'en-CH': '/en',
@@ -44,24 +45,12 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 
 // Helper to get paths for language switcher considering current page
 function getLanguageSwitchPaths(currentPath: string, currentLocale: Locale): { de: string, en: string } {
-  const pathWithoutLocale = currentPath.replace(`/${currentLocale}`, '') || '/';
-  let dePath = `/de${pathWithoutLocale}`;
-  let enPath = `/en${pathWithoutLocale}`;
-
-  // Handle specific path translations
-  // Example: if current is /en/about-us, switch to DE should be /de/ueber-uns
-  if (currentLocale === 'en' && pathWithoutLocale === '/about-us') {
-    dePath = '/de/ueber-uns';
-  } else if (currentLocale === 'de' && pathWithoutLocale === '/ueber-uns') {
-    enPath = '/en/about-us';
-  } else if (currentLocale === 'en' && pathWithoutLocale === '/contact') {
-    dePath = '/de/kontakt';
-  } else if (currentLocale === 'de' && pathWithoutLocale === '/kontakt') {
-    enPath = '/en/contact';
-  }
-  // Add more specific translations if needed, or generalize using LocalePathnames
-
-  return { de: dePath, en: enPath };
+  // The LanguageSwitcher component now handles path translation correctly
+  // We can pass simple root paths as fallbacks, but the component will calculate the correct paths
+  return { 
+    de: '/de', 
+    en: '/en' 
+  };
 }
 
 export default async function LocaleLayout({
@@ -69,12 +58,13 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale, path?: string[] };
+  params: Promise<{ lang: Locale, path?: string[] }>;
 }) {
-  if (!i18n.locales.includes(params.lang)) {
+  const { lang } = await params;
+  if (!i18n.locales.includes(lang)) {
     notFound();
   }
-  const content = await getContent(params.lang);
+  const content = await getContent(lang);
   
   // This is a placeholder for the current path logic.
   // In a real app, this would come from usePathname() on client or derived on server.
@@ -93,16 +83,16 @@ export default async function LocaleLayout({
   // const currentRelativePath = params.path ? `/${params.path.join('/')}` : '/';
   // This is not directly available. We rely on client-side usePathname in LanguageSwitcher or Header.
   // For the Header props, let's pass simplified paths for now.
-  const langSwitchPaths = getLanguageSwitchPaths(params.path ? `/${params.path.join('/')}` : '/', params.lang);
+  const langSwitchPaths = getLanguageSwitchPaths(lang, lang);
 
   return (
     <>
       <Header
-        locale={params.lang}
+        locale={lang}
         navItems={[
-          { href: `/${params.lang}`, label: content.nav.home, ariaLabel: content.nav.home },
-          { href: getLocalePath(params.lang, '/ueber-uns'), label: content.nav.about, ariaLabel: content.nav.about },
-          { href: getLocalePath(params.lang, '/kontakt'), label: content.nav.contact, ariaLabel: content.nav.contact },
+          { href: `/${lang}`, label: content.nav.home, ariaLabel: content.nav.home },
+          { href: getLocalePath(lang, '/ueber-uns'), label: content.nav.about, ariaLabel: content.nav.about },
+          { href: getLocalePath(lang, '/kontakt'), label: content.nav.contact, ariaLabel: content.nav.contact },
         ]}
         langSwitchPaths={langSwitchPaths}
         translations={{
@@ -116,7 +106,7 @@ export default async function LocaleLayout({
         {children}
       </main>
       <Footer 
-        locale={params.lang}
+        locale={lang}
         translations={{
           imprint: content.nav.imprint,
           privacy: content.nav.privacy,
@@ -125,9 +115,9 @@ export default async function LocaleLayout({
       />
       <ScrollToTopButton />
       <CookieConsentBanner 
-        locale={params.lang} 
+        locale={lang} 
         translations={content.cookieConsent}
-        privacyPolicyPath={`/${params.lang}/datenschutz`} // Assuming datenschutz/privacy path
+        privacyPolicyPath={`/${lang}/datenschutz`} // Assuming datenschutz/privacy path
       />
     </>
   );

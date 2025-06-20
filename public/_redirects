@@ -1,0 +1,19 @@
+# Redirects for S3 static hosting
+# Handle direct access to localized routes
+
+# Redirect root to default locale
+/ /de/ 302
+
+# Handle direct access to localized pages
+/de/kontakt /de/kontakt/ 302
+/de/ueber-uns /de/ueber-uns/ 302
+/de/impressum /de/impressum/ 302
+/de/datenschutz /de/datenschutz/ 302
+
+/en/contact /en/contact/ 302
+/en/about-us /en/about-us/ 302
+/en/impressum /en/impressum/ 302
+/en/datenschutz /en/datenschutz/ 302
+
+# Catch-all for 404s - redirect to home page
+/* /de/ 404 

@@ -15,28 +15,35 @@ export function LanguageSwitcher({ currentLocale, dePath, enPath }: LanguageSwit
   const pathname = usePathname();
 
   function getSwitchPath(targetLocale: Locale): string {
+    // If pre-calculated paths are provided, use them
     if (targetLocale === 'de' && dePath) return dePath;
     if (targetLocale === 'en' && enPath) return enPath;
 
-    // Fallback logic if specific paths not provided (should not happen with pre-calculation)
+    // Extract the path without locale
     const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '') || '/';
     
-    if (targetLocale === 'de') {
-      // Is current English path translatable to German?
-      const deEquivalent = Object.keys(LocalePathnames.de).find(key => LocalePathnames.de[key] === pathWithoutLocale);
-      if (deEquivalent) return `/de${deEquivalent}`;
-      // Or is current path an English specific one?
-      if (LocalePathnames.en[pathWithoutLocale]) return `/de${LocalePathnames.en[pathWithoutLocale]}`;
-    } else { // targetLocale === 'en'
-      // Is current German path translatable to English?
-      const enEquivalent = Object.keys(LocalePathnames.en).find(key => LocalePathnames.en[key] === pathWithoutLocale);
-      if (enEquivalent) return `/en${enEquivalent}`;
-      // Or is current path a German specific one?
-      if (LocalePathnames.de[pathWithoutLocale]) return `/en${LocalePathnames.de[pathWithoutLocale]}`;
+    // First, check if the current path has a direct translation in the target locale
+    const targetPathnames = LocalePathnames[targetLocale];
+    const translatedPath = targetPathnames[pathWithoutLocale];
+    
+    if (translatedPath) {
+      return `/${targetLocale}${translatedPath}`;
     }
+    
+    // If not found directly, check if the current path is a translated path that should be reversed
+    // Look for the current path in the target locale's pathnames values to find the original key
+    const reverseTranslatedPath = Object.entries(targetPathnames).find(
+      ([key, value]) => value === pathWithoutLocale
+    );
+    
+    if (reverseTranslatedPath) {
+      const [originalKey] = reverseTranslatedPath;
+      return `/${targetLocale}${originalKey}`;
+    }
+    
+    // Fallback: just change the locale prefix
     return `/${targetLocale}${pathWithoutLocale}`;
   }
-
 
   return (
     <div className="flex items-center border border-header-custom-foreground/50 rounded-md overflow-hidden">

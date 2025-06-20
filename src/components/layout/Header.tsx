@@ -1,11 +1,13 @@
 // @ts-nocheck
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import type { Locale } from '@/lib/i18n';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu as MenuIcon, ShoppingBag } from 'lucide-react'; // Assuming ShoppingBag for logo placeholder
 
 interface NavItem {
@@ -27,15 +29,20 @@ interface HeaderProps {
 }
 
 const SiteLogo = () => (
-  <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Switzerathi Logo">
-    <circle cx="50" cy="50" r="48" fill="hsl(var(--primary))" />
-    <text x="50" y="62" fontSize="32" fill="hsl(var(--primary-foreground))" textAnchor="middle" fontFamily="Poppins, sans-serif" fontWeight="600">SA</text>
-  </svg>
+  <Image
+    src="/images/logo/thanima_logo.svg"
+    alt="Thanima Logo"
+    width={100}
+    height={100}
+    className="w-100 h-100"
+    priority
+  />
 );
 
 
 export function Header({ navItems, locale, langSwitchPaths, translations }: HeaderProps) {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { href: `/${locale}`, label: translations.navHome, key: 'home' },
@@ -57,6 +64,11 @@ export function Header({ navItems, locale, langSwitchPaths, translations }: Head
           ${isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full'}
         `}
         aria-current={isActive ? 'page' : undefined}
+        onClick={() => {
+          if (isMobile) {
+            setIsMobileMenuOpen(false);
+          }
+        }}
       >
         {item.label}
       </Link>
@@ -69,7 +81,7 @@ export function Header({ navItems, locale, langSwitchPaths, translations }: Head
       <div className="container-max-width flex h-16 items-center justify-between lg:h-20">
         <Link href={`/${locale}`} aria-label={translations.logoAlt || "Homepage"} className="flex items-center gap-2">
           <SiteLogo />
-          <span className="hidden sm:inline font-headline font-semibold text-lg">Switzerathi</span>
+          {/* <span className="hidden sm:inline font-headline font-semibold text-lg">Thanima</span> */}
         </Link>
 
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4" aria-label="Main navigation">
@@ -79,13 +91,14 @@ export function Header({ navItems, locale, langSwitchPaths, translations }: Head
         <div className="flex items-center gap-2 md:gap-4">
           <LanguageSwitcher currentLocale={locale} dePath={langSwitchPaths.de} enPath={langSwitchPaths.en} />
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open menu">
                   <MenuIcon className="h-6 w-6 text-header-custom-foreground" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-header-custom-background text-header-custom-foreground p-6">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="mt-8 flex flex-col space-y-4">
                   {renderNavLinks(true)}
                 </div>
