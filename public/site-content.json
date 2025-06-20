@@ -1,0 +1,231 @@
+
+{
+  "de": {
+    "site": {
+      "title": "Südindische Mode in der Schweiz",
+      "description": "Exklusive Sarees, Lehengas und Seidenblusen direkt aus Chennai nach Zürich gebracht."
+    },
+    "nav": {
+      "home": "Home",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "language": {
+        "de": "DE",
+        "en": "EN"
+      },
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
+    },
+    "home": {
+      "banner": [
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Modell trägt einen traditionellen Saree",
+          "data_ai_hint": "saree fashion",
+          "headline": "Sarees voller Tradition",
+          "sub": "Erlebe handgewebte Kanchipuram-Seide",
+          "cta": "Jetzt entdecken",
+          "link": "https://wa.me/41790000000"
+        },
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Elegantes Lehenga in Pastellfarben",
+          "data_ai_hint": "lehenga pastel",
+          "headline": "Lehengas in Pastell",
+          "sub": "Moderne Schnitte, klassische Handarbeit",
+          "cta": "Look ansehen",
+          "link": "https://wa.me/41790000000"
+        },
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Maßgeschneiderte Seidenbluse",
+          "data_ai_hint": "silk blouse",
+          "headline": "Maßgeschneiderte Blusen",
+          "sub": "Perfekte Passform garantiert",
+          "cta": "Termin buchen",
+          "link": "https://wa.me/41790000000"
+        }
+      ],
+      "intro": {
+        "headline": "Handverlesene Kollektionen",
+        "text": "Wir bringen Südindiens feinste Stoffe in die Herzen der Schweiz. Jede Kollektion wird sorgfältig kuratiert und entspricht unseren hohen Ansprüchen an Qualität, Nachhaltigkeit und Stil."
+      },
+      "products": [
+        { "image": "https://placehold.co/400x500.png", "alt": "Kanchipuram Seide Saree", "data_ai_hint": "kanchipuram silk", "name": "Kanchipuram Seide", "caption": "Goldene Zari-Webung" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Banarasi Brokat Stoff", "data_ai_hint": "banarasi brocade", "name": "Banarasi Brokat", "caption": "Tradition trifft Minimalismus" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Pastellfarbenes Lehenga", "data_ai_hint": "pastel lehenga", "name": "Pastell Lehenga", "caption": "Federleicht und elegant" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Bandhani Saree Detail", "data_ai_hint": "bandhani saree", "name": "Bandhani Saree", "caption": "Handgeknotete Kunst" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Klassischer Kasavu Saree", "data_ai_hint": "kasavu kerala", "name": "Kasavu", "caption": "Kerala Klassik" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Maßgeschneiderte Seidenbluse", "data_ai_hint": "custom blouse", "name": "Seidenbluse", "caption": "Massarbeit ab 3 Tagen" }
+      ]
+    },
+    "about": {
+      "banner": { "image": "https://placehold.co/1920x600.png", "alt": "Über uns Bannerbild", "data_ai_hint": "textiles patterns", "headline": "Unsere Reise" },
+      "partners": [
+        {
+          "image": "https://placehold.co/400x533.png", "alt": "Foto von Ananya Raman", "data_ai_hint": "woman portrait",
+          "name": "Ananya Raman",
+          "role": "Creative Director",
+          "bio": "Geboren in Chennai, bringt Ananya 15 Jahre Erfahrung im Textildesign mit. Ihre Leidenschaft ist es, traditionelle Stoffe neu zu interpretieren."
+        },
+        {
+          "image": "https://placehold.co/400x533.png", "alt": "Foto von Maya Krishnan", "data_ai_hint": "woman professional",
+          "name": "Maya Krishnan",
+          "role": "Operations Lead",
+          "bio": "Maya sorgt dafür, dass jede Bestellung reibungslos von Indien in die Schweiz gelangt. Nachhaltige Lieferketten sind ihr Herzensprojekt."
+        }
+      ],
+      "mission": {
+        "headline": "Das Herz des Südens, direkt in die Alpen",
+        "text": "Unser Ziel ist es, die lebendigen Farben und Geschichten Südindiens sicher und stilvoll in die Schweiz zu bringen – ohne Kompromisse bei Qualität oder Ethik."
+      }
+    },
+    "contact": {
+      "banner": { "image": "https://placehold.co/1920x600.png", "alt": "Kontakt Bannerbild", "data_ai_hint": "store interior", "headline": "Sag Hallo" },
+      "address": {
+        "line1": "Musterstrasse 12",
+        "line2": "8000 Zürich, Schweiz",
+        "phone": "+41 79 123 45 67",
+        "email": "info@switzerathi.ch",
+        "map": { "lat": 47.3769, "lng": 8.5417, "zoom": 15 }
+      },
+      "form": {
+        "name": "Name",
+        "email": "E-Mail",
+        "message": "Nachricht",
+        "gdpr": "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
+        "submit": "Senden",
+        "success": "Danke! Wir melden uns so schnell wie möglich.",
+        "error": "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
+      },
+      "mapImageAlt": "Karte mit Standort von Switzerathi in Zürich"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "message": "Entschuldigung, die von Ihnen gesuchte Seite konnte nicht gefunden werden.",
+      "button": "Zurück zur Startseite"
+    },
+    "cookieConsent": {
+      "message": "Wir verwenden Cookies, um Ihr Erlebnis auf unserer Website zu verbessern. Indem Sie weiter surfen, stimmen Sie unserer Verwendung von Cookies zu.",
+      "accept": "Akzeptieren",
+      "learnMore": "Mehr erfahren"
+    },
+    "footer": {
+      "social": "Folge uns"
+    }
+  },
+  "en": {
+    "site": {
+      "title": "South-Indian Fashion in Switzerland",
+      "description": "Exclusive sarees, lehengas and silk blouses delivered from Chennai to Zurich."
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "contact": "Contact",
+      "language": {
+        "de": "DE",
+        "en": "EN"
+      },
+      "imprint": "Imprint",
+      "privacy": "Privacy Policy"
+    },
+    "home": {
+      "banner": [
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Model wearing a traditional Saree",
+          "data_ai_hint": "saree fashion",
+          "headline": "Timeless Sarees",
+          "sub": "Experience hand-woven Kanchipuram silk",
+          "cta": "Discover now",
+          "link": "https://wa.me/41790000000"
+        },
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Elegant Lehenga in pastel colors",
+          "data_ai_hint": "lehenga pastel",
+          "headline": "Pastel Lehengas",
+          "sub": "Modern cuts, classical craft",
+          "cta": "View look",
+          "link": "https://wa.me/41790000000"
+        },
+        {
+          "image": "https://placehold.co/1920x1080.png",
+          "alt": "Tailor-made silk blouse",
+          "data_ai_hint": "silk blouse",
+          "headline": "Tailor-made Blouses",
+          "sub": "Perfect fit guaranteed",
+          "cta": "Book fitting",
+          "link": "https://wa.me/41790000000"
+        }
+      ],
+      "intro": {
+        "headline": "Curated Collections",
+        "text": "We bring South-India’s finest fabrics to the heart of Switzerland. Each drop is hand-picked and meets our standards for quality, sustainability and style."
+      },
+      "products": [
+        { "image": "https://placehold.co/400x500.png", "alt": "Kanchipuram Silk Saree", "data_ai_hint": "kanchipuram silk", "name": "Kanchipuram Silk", "caption": "Golden Zari weaving" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Banarasi Brocade fabric", "data_ai_hint": "banarasi brocade", "name": "Banarasi Brocade", "caption": "Tradition meets minimalism" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Pastel colored Lehenga", "data_ai_hint": "pastel lehenga", "name": "Pastel Lehenga", "caption": "Feather-light elegance" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Bandhani Saree detail", "data_ai_hint": "bandhani saree", "name": "Bandhani Saree", "caption": "Hand-tied artistry" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Classic Kasavu Saree", "data_ai_hint": "kasavu kerala", "name": "Kasavu", "caption": "Kerala classic" },
+        { "image": "https://placehold.co/400x500.png", "alt": "Custom silk blouse", "data_ai_hint": "custom blouse", "name": "Silk Blouse", "caption": "Custom fit in 3 days" }
+      ]
+    },
+    "about": {
+      "banner": { "image": "https://placehold.co/1920x600.png", "alt": "About us banner image", "data_ai_hint": "fashion team", "headline": "Our Story" },
+      "partners": [
+        {
+          "image": "https://placehold.co/400x533.png", "alt": "Photo of Ananya Raman", "data_ai_hint": "woman director",
+          "name": "Ananya Raman",
+          "role": "Creative Director",
+          "bio": "Born in Chennai, Ananya brings 15 years of textile design experience. She lives to reinterpret traditional fabrics for today."
+        },
+        {
+          "image": "https://placehold.co/400x533.png", "alt": "Photo of Maya Krishnan", "data_ai_hint": "operations manager",
+          "name": "Maya Krishnan",
+          "role": "Operations Lead",
+          "bio": "Maya ensures every order travels smoothly from India to Switzerland. Building sustainable supply chains is her passion project."
+        }
+      ],
+      "mission": {
+        "headline": "The Heart of the South, in the Alps",
+        "text": "Our mission is to deliver the vibrant colours and stories of South India to Switzerland—without compromising on quality or ethics."
+      }
+    },
+    "contact": {
+      "banner": { "image": "https://placehold.co/1920x600.png", "alt": "Contact banner image", "data_ai_hint": "customer service", "headline": "Say Hello" },
+      "address": {
+        "line1": "Sample Street 12",
+        "line2": "8000 Zurich, Switzerland",
+        "phone": "+41 79 123 45 67",
+        "email": "info@switzerathi.ch",
+        "map": { "lat": 47.3769, "lng": 8.5417, "zoom": 15 }
+      },
+      "form": {
+        "name": "Name",
+        "email": "E-Mail",
+        "message": "Message",
+        "gdpr": "I agree to the processing of my data according to the privacy policy.",
+        "submit": "Send",
+        "success": "Thank you! We will get back to you as soon as possible.",
+        "error": "Something went wrong. Please try again later."
+      },
+      "mapImageAlt": "Map showing location of Switzerathi in Zurich"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "message": "Sorry, the page you are looking for could not be found.",
+      "button": "Back to Homepage"
+    },
+    "cookieConsent": {
+      "message": "We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies.",
+      "accept": "Accept",
+      "learnMore": "Learn More"
+    },
+    "footer": {
+      "social": "Follow us"
+    }
+  }
+}
