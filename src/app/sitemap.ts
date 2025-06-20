@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import { i18n, getLocalePath } from '@/lib/i18n';
 import { getBaseUrl } from '@/lib/content';
 
+export const dynamic = 'force-static';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrl();
   const { locales, defaultLocale } = i18n;

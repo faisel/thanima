@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { LanguageProvider } from '@/components/LanguageProvider';
 
 // Using next/font for Poppins as it's best practice, ignoring specific instruction for <link> tags
 const poppins = Poppins({
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     title: 'Switzerathi - South-Indian Fashion',
     description: 'Exclusive Sarees, Lehengas and Seidenblusen direkt aus Chennai nach Zuerich gebracht.',
     // og:image will be set per page, but a default can be here
-    images: [{ url: 'https://placehold.co/1200x630.png?text=Switzerathi+Fashion', data_ai_hint: "brand logo fashion" }], 
+    images: [{ url: 'https://placehold.co/1200x630.png?text=Switzerathi+Fashion' }], 
   },
   robots: {
     index: true,
@@ -39,8 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // lang attribute will be set in [lang]/layout.tsx
-    <html className={`${poppins.variable}`}>
+    <html className={`${poppins.variable} h-full`}>
       <head>
         {/* Google Fonts preconnect, next/font handles this but kept if other fonts were linked manually */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +49,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         */}
       </head>
-      <body className="font-body antialiased flex flex-col min-h-screen">
+      <body className="font-body antialiased flex flex-col min-h-screen bg-background">
+        <LanguageProvider />
         {children}
         <Toaster />
         <SpeedInsights />

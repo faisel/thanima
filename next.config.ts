@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Uncomment the line below for static export
+  output: 'export',
   images: {
     remotePatterns: [
       {

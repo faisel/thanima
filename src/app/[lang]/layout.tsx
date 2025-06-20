@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -65,7 +64,6 @@ function getLanguageSwitchPaths(currentPath: string, currentLocale: Locale): { d
   return { de: dePath, en: enPath };
 }
 
-
 export default async function LocaleLayout({
   children,
   params,
@@ -97,43 +95,40 @@ export default async function LocaleLayout({
   // For the Header props, let's pass simplified paths for now.
   const langSwitchPaths = getLanguageSwitchPaths(params.path ? `/${params.path.join('/')}` : '/', params.lang);
 
-
   return (
-    <html lang={params.lang} className="h-full">
-      <body className="flex flex-col min-h-screen bg-background">
-        <Header
-          locale={params.lang}
-          navItems={[
-            { href: `/${params.lang}`, label: content.nav.home, ariaLabel: content.nav.home },
-            { href: getLocalePath(params.lang, '/ueber-uns'), label: content.nav.about, ariaLabel: content.nav.about },
-            { href: getLocalePath(params.lang, '/kontakt'), label: content.nav.contact, ariaLabel: content.nav.contact },
-          ]}
-          langSwitchPaths={langSwitchPaths}
-          translations={{
-            logoAlt: content.site.title,
-            navHome: content.nav.home,
-            navAbout: content.nav.about,
-            navContact: content.nav.contact,
-          }}
-        />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer 
-          locale={params.lang}
-          translations={{
-            imprint: content.nav.imprint,
-            privacy: content.nav.privacy,
-            social: content.footer.social,
-          }}
-        />
-        <ScrollToTopButton />
-        <CookieConsentBanner 
-          locale={params.lang} 
-          translations={content.cookieConsent}
-          privacyPolicyPath={`/${params.lang}/datenschutz`} // Assuming datenschutz/privacy path
-        />
-      </body>
-    </html>
+    <>
+      <Header
+        locale={params.lang}
+        navItems={[
+          { href: `/${params.lang}`, label: content.nav.home, ariaLabel: content.nav.home },
+          { href: getLocalePath(params.lang, '/ueber-uns'), label: content.nav.about, ariaLabel: content.nav.about },
+          { href: getLocalePath(params.lang, '/kontakt'), label: content.nav.contact, ariaLabel: content.nav.contact },
+        ]}
+        langSwitchPaths={langSwitchPaths}
+        translations={{
+          logoAlt: content.site.title,
+          navHome: content.nav.home,
+          navAbout: content.nav.about,
+          navContact: content.nav.contact,
+        }}
+      />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer 
+        locale={params.lang}
+        translations={{
+          imprint: content.nav.imprint,
+          privacy: content.nav.privacy,
+          social: content.footer.social,
+        }}
+      />
+      <ScrollToTopButton />
+      <CookieConsentBanner 
+        locale={params.lang} 
+        translations={content.cookieConsent}
+        privacyPolicyPath={`/${params.lang}/datenschutz`} // Assuming datenschutz/privacy path
+      />
+    </>
   );
 }

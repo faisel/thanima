@@ -1,4 +1,3 @@
-
 import type { Locale } from './i18n';
 import fs from 'fs/promises';
 import path from 'path';
@@ -44,6 +43,7 @@ export async function getContent(locale: Locale): Promise<SiteContent> {
 // Re-export i1n config for convenience
 import { i18n } from './i18n';
 export { i18n };
+export type { Locale };
 
 export function getBaseUrl() {
   if (typeof window !== 'undefined') return ''; 
