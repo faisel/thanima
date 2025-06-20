@@ -1,4 +1,8 @@
+
 import type { Locale } from './i18n';
+import fs from 'fs/promises';
+import path from 'path';
+
 // This type definition is an example, it should match the structure of your site-content.json
 // You might want to generate this type from your JSON schema for better accuracy.
 // For brevity, using 'any'. In a real project, define this properly.
@@ -14,16 +18,17 @@ async function loadContent(): Promise<SiteContent> {
   if (contentCache) {
     return contentCache;
   }
-  // In Next.js, you can use process.cwd() to get the root directory
-  // and then construct the path to public/site-content.json
-  // For server components, direct import or fetch might be used.
-  // Using fetch for broader compatibility (e.g. edge runtimes)
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002'}/site-content.json`);
-  if (!response.ok) {
+  
+  try {
+    // Construct the path to public/site-content.json
+    const filePath = path.join(process.cwd(), 'public', 'site-content.json');
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    contentCache = JSON.parse(fileContent);
+    return contentCache!;
+  } catch (error) {
+    console.error('Failed to load site content:', error);
     throw new Error('Failed to fetch site content');
   }
-  contentCache = await response.json();
-  return contentCache!;
 }
 
 
@@ -43,5 +48,8 @@ export { i18n };
 export function getBaseUrl() {
   if (typeof window !== 'undefined') return ''; 
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  // Fallback to NEXT_PUBLIC_BASE_URL if VERCEL_URL is not available, then localhost
+  if (process.env.NEXT_PUBLIC_BASE_URL) return process.env.NEXT_PUBLIC_BASE_URL;
   return `http://localhost:${process.env.PORT || 9002}`;
 }
+

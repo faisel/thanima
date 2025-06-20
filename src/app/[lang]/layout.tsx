@@ -1,9 +1,11 @@
+
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTopButton } from '@/components/ui/ScrollToTopButton';
 import { CookieConsentBanner } from '@/components/ui/CookieConsentBanner';
-import { getContent, type Locale, i18n, getLocalePath } from '@/lib/content';
+import { getContent } from '@/lib/content';
+import { type Locale, i18n, getLocalePath } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
